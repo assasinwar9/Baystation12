@@ -2320,11 +2320,17 @@
 	result_amount = 10
 	mix_message = "The tea mingles with the rice."
 
+/datum/chemical_reaction/crystal
+	name = "Crystallizing Agent"
+	result = /datum/reagent/crystal
+	required_reagents = list(/datum/reagent/silicon = 2, /datum/reagent/acetone = 2, /datum/chemical_reaction/mutagen = 1)
+	result_amount = 5
+
 /datum/chemical_reaction/resin_pack
 	name = "Resin Globule"
 	result = null
 	required_reagents = list(
-		/datum/reagent/crystal = 1, 
+		/datum/reagent/crystal = 1,
 		/datum/reagent/silicon = 2
 	)
 	catalysts = list(
