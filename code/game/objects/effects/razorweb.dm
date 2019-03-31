@@ -65,14 +65,6 @@
 		destroy_self = TRUE
 
 	if(user.unEquip(thing))
-		visible_message("<span class='danger'>\The [thing] is sliced apart!</span>")
-
-	var/destroy_self
-	if(thing.force)
-		visible_message(SPAN_DANGER("\The [user] breaks \the [src] with \the [thing]!"))
-		destroy_self = TRUE
-
-	if(user.unEquip(thing))
 		visible_message(SPAN_DANGER("\The [thing] is sliced apart!"))
 		qdel(thing)
 
@@ -155,26 +147,8 @@
 				E = thing
 				break
 
-		if(E && !prob(L.getarmor(E, "melee")))
 			E = H.organs_by_name[E]
 			visible_message("<span class='danger'>The crystalline strands slice straight through \the [H]'s [E.amputation_point || E.name]!</span>")
-			E.droplimb()
-			severed = TRUE
-
-	if(!severed)
-		var/armourval = L.getarmor(null, "melee")
-		if(!prob(armourval))
-			armourval = armourval/100
-			var/dam = Floor(rand(25,50) * armourval)
-			if(dam)
-				L.adjustBruteLoss(dam)
-				visible_message("<span class='danger'>The crystalline strands cut deeply into \the [L]!</span>")
-
-	if(prob(break_chance))
-		visible_message("<span class='danger'>\The [src] breaks apart!</span>")
-		if(E && !prob(100 * L.get_blocked_ratio(null, BRUTE)))
-			E = H.organs_by_name[E]
-			visible_message(SPAN_DANGER("The crystalline strands slice straight through \the [H]'s [E.amputation_point || E.name]!"))
 			E.droplimb()
 			severed = TRUE
 
