@@ -1,5 +1,4 @@
 /datum/map
-	var/species_to_job_whitelist = list(/datum/species/vox = list(/datum/job/ai, /datum/job/cyborg))
 	var/species_to_job_blacklist = list()
 
 	var/job_to_species_whitelist = list()
@@ -12,9 +11,6 @@
 	if(!istype(S) || !istype(J))
 		return TRUE
 
-	var/list/whitelist = species_to_job_whitelist[S.type]
-	if(whitelist)
-		return !(J.type in whitelist)
 
 	whitelist = job_to_species_whitelist[J.type]
 	if(whitelist)
