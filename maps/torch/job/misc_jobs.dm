@@ -1,7 +1,7 @@
 /********
 Synthetic
 ********/
-
+/*
 /datum/job/cyborg
 	total_positions = 3
 	spawn_positions = 3
@@ -16,7 +16,7 @@ Synthetic
 	allowed_ranks = list(
 		/datum/mil_rank/civ/synthetic
 	)
-
+*/
 /*******
 Civilian
 *******/

@@ -6,7 +6,6 @@
 	additional_langs = list(LANGUAGE_GALCOM)
 	description = "You have been trained to Xynergy Grade PLACEHOLDER."
 	var/list/valid_jobs = list()
-	var/list/hidden_valid_jobs = list(/datum/job/ai, /datum/job/cyborg)
 	var/title_suffix
 
 /decl/cultural_info/culture/nabber/get_formal_name_suffix()
@@ -33,8 +32,6 @@
 		LAZYADD(qualifications, "Safe for [role].")
 
 	// Add our hidden jobs since we're done building the desc.
-	if(LAZYLEN(hidden_valid_jobs))
-		LAZYADD(valid_jobs, hidden_valid_jobs)
 
 /decl/cultural_info/culture/nabber/c
 	name = CULTURE_NABBER_C
